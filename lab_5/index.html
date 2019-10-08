@@ -11,7 +11,7 @@
     <div class="wrapper">
       <div class="header">Test JSON page</div>
       <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
-      <button class="button" onclick="console.log('You haven\'t written a function yet!');">Click me to replace list entries</button>
+      <button class="button" onclick="replaceList()">Click me to replace list entries</button>
       <div class="content">
         <ul class="instructions">
           <li>Delete and re-clone the class repository</li>
@@ -278,16 +278,19 @@
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
     ]
+    
     let countries_json = JSON.stringify(countries);
 
-    sessionStorage.setItem('countries', JSON.stringify(countries));
-    let sessionitem = sessionStorage.getItem('countries')
-    console.log('sessionitem: ', JSON.parse(sessionitem));
-    let list = "";
-    for (i = 0; i < countries.code.length; i++) {
-      list += countries.code[i] + "<br>";
-    }
-    document.getElementsByClassName("instructions").innerHTML = list;
+    // sessionStorage.setItem('countries', JSON.stringify(countries));
+    // let sessionitem = sessionStorage.getItem('countries')
+    // console.log('sessionitem: ', JSON.parse(sessionitem));
+
+   function replaceList() {
+      let oldList = document.getElementsByClassName("instructions");
+      for (var i = 0; i < 50; i++) {
+        oldList.innerHTML = countries[i].name;
+      }
+   }
     console.log("List of countries in the world", countries);
   </script>
 </body>
