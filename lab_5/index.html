@@ -287,8 +287,8 @@
 
    function replaceList() {
       let oldList = document.getElementsByClassName("instructions");
-      for (var i = 0; i < 50; i++) {
-        oldList.innerHTML = countries[i].name;
+      for (i = 0; i < 50; i++) {
+        oldList[0].innerHTML += countries[i].name + '</br>';
       }
    }
     console.log("List of countries in the world", countries);
