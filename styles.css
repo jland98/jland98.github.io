@@ -1,0 +1,116 @@
+html {
+  background-color: whitesmoke;
+}
+
+/* (Q2-1) */
+header {
+  background: darkgoldenrod;
+  color: white;
+}
+
+/* (Q2-2) */
+.personal {
+  width: 60%;
+  margin: auto;
+}
+
+#links {
+  text-align: center;
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: Tahoma, sans-serif;
+  margin: 2em;
+  line-height: 1.4;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+h3 {
+  margin-bottom: 1em;
+  text-align: center;
+  font-family: "Trebuchet MS", sans-serif;
+  text-decoration: underline;
+}
+
+/* (Q2-4) */
+#background img {
+  width: 100px;
+  height: 100px;
+  float: right;
+}
+
+#work {
+  background-color: antiquewhite;
+  border: 3px solid black;
+  padding: 0.5em;
+}
+
+#work h4 {
+  margin: 1em 0;
+  text-align: center;
+  text-decoration: underline;
+}
+/* (Q2-5) */
+#work a {
+  text-decoration: none;
+  color: #1daeec;
+}
+
+#work ul {
+  list-style-type: lower-roman;
+}
+
+#work span {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* (Q2-3) */
+#misc {
+  display: flex;
+  justify-content: space-between;
+  background-color: antiquewhite;
+  border: 3px solid black;
+  padding: 0.5em;
+  margin-top: 0.5em;
+}
+
+#misc .column {
+  flex: 1 1 0;
+}
+
+#misc .list-header {
+  font-weight: bold;
+  font-family: "Trebuchet MS", sans-serif;
+  text-align: center;
+  text-decoration: underline;
+  list-style: none;
+  font-size: larger;
+}
+
+#misc img {
+  display: block;
+  height: 100px;
+  margin: auto;
+  padding: 1em;
+}
+
+#misc .divider {
+  width: 3px;
+  margin: 10px 0;
+  background: black;
+}
+
+#misc ul {
+  margin: 1px;
+}
