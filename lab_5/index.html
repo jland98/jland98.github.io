@@ -31,7 +31,7 @@
       <div class="footer"></div>
     </div>
   </div>
-  <script>
+  <script>    
     /* N.B. - For your lab, use the variable "countries" now available on the window space */
     const countries = [
       { "name": "Afghanistan", "code": "AF" },
@@ -278,6 +278,16 @@
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
     ]
+    let countries_json = JSON.stringify(countries);
+
+    sessionStorage.setItem('countries', JSON.stringify(countries));
+    let sessionitem = sessionStorage.getItem('countries')
+    console.log('sessionitem: ', JSON.parse(sessionitem));
+    let list = "";
+    for (i = 0; i < countries.code.length; i++) {
+      list += countries.code[i] + "<br>";
+    }
+    document.getElementsByClassName("instructions").innerHTML = list;
     console.log("List of countries in the world", countries);
   </script>
 </body>
