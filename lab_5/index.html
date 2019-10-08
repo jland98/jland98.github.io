@@ -286,10 +286,14 @@
     // console.log('sessionitem: ', JSON.parse(sessionitem));
 
    function replaceList() {
+      let country_list = "";
       let oldList = document.getElementsByClassName("instructions");
+      let i;
       for (i = 0; i < 50; i++) {
-        oldList[0].innerHTML += countries[i].name + '</br>';
+        country_list += countries[i].name + '<br>';
       }
+      oldList[0].innerHTML = country_list;
+
    }
     console.log("List of countries in the world", countries);
   </script>
