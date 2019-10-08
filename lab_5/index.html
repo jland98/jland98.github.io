@@ -31,7 +31,7 @@
       <div class="footer"></div>
     </div>
   </div>
-  <script>    
+  <script>
     /* N.B. - For your lab, use the variable "countries" now available on the window space */
     const countries = [
       { "name": "Afghanistan", "code": "AF" },
@@ -278,23 +278,27 @@
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
     ]
-    
+
     let countries_json = JSON.stringify(countries);
 
     // sessionStorage.setItem('countries', JSON.stringify(countries));
     // let sessionitem = sessionStorage.getItem('countries')
     // console.log('sessionitem: ', JSON.parse(sessionitem));
+    
+    function getRandNum(min, max) {
+      return Math.floor(Math.random() * (countries.length - 0)) + 0;
+    }
 
-   function replaceList() {
+    function replaceList() {
       let country_list = "";
       let oldList = document.getElementsByClassName("instructions");
       let i;
       for (i = 0; i < 50; i++) {
-        country_list += countries[i].name + '<br>';
+        country_list += countries[getRandNum(0, countries.length)].name + '<br>';
       }
       oldList[0].innerHTML = country_list;
 
-   }
+    }
     console.log("List of countries in the world", countries);
   </script>
 </body>
