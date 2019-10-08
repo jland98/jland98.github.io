@@ -215,7 +215,7 @@
       { "name": "Reunion", "code": "RE" },
       { "name": "Romania", "code": "RO" },
       { "name": "Russian Federation", "code": "RU" },
-      { "name": "RWANDA", "code": "RW" },
+      { "name": "Rwanda", "code": "RW" },
       { "name": "Saint Helena", "code": "SH" },
       { "name": "Saint Kitts and Nevis", "code": "KN" },
       { "name": "Saint Lucia", "code": "LC" },
@@ -279,11 +279,11 @@
       { "name": "Zimbabwe", "code": "ZW" }
     ]
 
-    let countries_json = JSON.stringify(countries);
+    let countries_json = JSON.stringify(countries.code);
 
-    // sessionStorage.setItem('countries', JSON.stringify(countries));
-    // let sessionitem = sessionStorage.getItem('countries')
-    // console.log('sessionitem: ', JSON.parse(sessionitem));
+    sessionStorage.setItem('countries.code', JSON.stringify(countries));
+    let sessionitem = sessionStorage.getItem('countries.code')
+    console.log('sessionitem: ', JSON.parse(sessionitem));
     
     function getRandNum(min, max) {
       return Math.floor(Math.random() * (countries.length - 0)) + 0;
@@ -294,9 +294,9 @@
       let oldList = document.getElementsByClassName("instructions");
       let i;
       for (i = 0; i < 50; i++) {
-        country_list += countries[getRandNum(0, countries.length)].name + '<br>';
+        country_list += "<li>" + countries[getRandNum(0, countries.length)].name + '<br>';
       }
-      oldList[0].innerHTML = country_list;
+      oldList[0].innerHTML = "<ol>" + country_list;
 
     }
     console.log("List of countries in the world", countries);
