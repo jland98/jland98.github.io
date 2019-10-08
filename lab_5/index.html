@@ -10,7 +10,7 @@
   <div class="container">
     <div class="wrapper">
       <div class="header">Test JSON page</div>
-      <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
+      <button class="button" onclick="loadData()">Load Some JSON</button>
       <button class="button" onclick="replaceList()">Click me to replace list entries</button>
       <div class="content">
         <ul class="instructions">
@@ -279,12 +279,11 @@
       { "name": "Zimbabwe", "code": "ZW" }
     ]
 
-    let countries_json = JSON.stringify(countries.code);
+    function loadData() {
+      sessionStorage.setItem('country_codes', JSON.stringify(countries.code));
+      let codes = sessionStorage.getItem('country_codes');
+    }
 
-    sessionStorage.setItem('countries.code', JSON.stringify(countries));
-    let sessionitem = sessionStorage.getItem('countries.code')
-    console.log('sessionitem: ', JSON.parse(sessionitem));
-    
     function getRandNum(min, max) {
       return Math.floor(Math.random() * (countries.length - 0)) + 0;
     }
