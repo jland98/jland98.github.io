@@ -280,23 +280,31 @@
     ]
 
     function loadData() {
-      sessionStorage.setItem('country_codes', JSON.stringify(countries.code));
+      sessionStorage.setItem('country_codes', JSON.stringify(countries.map(country => country.code)));
       let codes = sessionStorage.getItem('country_codes');
+      console.log(codes);
     }
 
-    function getRandNum(min, max) {
-      return Math.floor(Math.random() * (countries.length - 0)) + 0;
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * max) + min;
     }
 
     function replaceList() {
-      let country_list = "";
-      let oldList = document.getElementsByClassName("instructions");
-      let i;
-      for (i = 0; i < 50; i++) {
-        country_list += "<li>" + countries[getRandNum(0, countries.length)].name + '<br>';
-      }
-      oldList[0].innerHTML = "<ol>" + country_list;
+      const countryNames = countries.map(country => country.name);
+      const oldListElement = document.getElementsByClassName("instructions")[0];
 
+      let countryList = "";
+      let i;
+
+      for (i = 0; i < 50; i++) {
+        const randomNumber = getRandomNumber(0, countries.length);
+        const randomCountryName = countryNames[randomNumber];
+        countryNames.splice(randomNumber, 1, 0);
+
+        countryList += "<li>" + randomCountryName + '</li>' + '\n';
+      }
+
+      oldListElement.innerHTML = "<ol>" + countryList + "</ol>";
     }
     console.log("List of countries in the world", countries);
   </script>
