@@ -299,7 +299,7 @@
       for (i = 0; i < 50; i++) {
         const randomNumber = getRandomNumber(0, countries.length);
         const randomCountryName = countryNames[randomNumber];
-        countryNames.splice(randomNumber, 1, 0);
+        countryNames.splice(randomNumber, 0);
 
         countryList += "<li>" + randomCountryName + '</li>' + '\n';
       }
