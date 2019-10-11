@@ -297,9 +297,9 @@
       let i;
 
       for (i = 0; i < 50; i++) {
-        const randomNumber = getRandomNumber(0, countries.length);
+        const randomNumber = getRandomNumber(0, countryNames.length);
         const randomCountryName = countryNames[randomNumber];
-        // countryNames.splice(randomNumber, 1);
+        countryNames.splice(randomNumber, 1);
 
         countryList += "<li>" + randomCountryName + '</li>' + '\n';
       }
