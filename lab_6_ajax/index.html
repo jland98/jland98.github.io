@@ -16,27 +16,11 @@
     </div>
   </div>
   <script>
-    function getRandomNumber(min, max) {
-      return Math.floor(Math.random() * max) + min;
-    }
-
-    function loadData() { 
-      const oldList = document.querySelector(".content");
+    function loadData() {
       fetch('ajax_sample.json')
         .then(res => res.json())
-        .then(res => res.map(c => c.name))
-        .then(names => {
-          const array = names.map((item) => {
-            console.log('returned values of a', a)
-            return codes;
-          })
-          then(thing => 
-          oldList.innerText = names
-
-        }
-      // const randomNumber = getRandomNumber(0, names.length);
-      // const randomCountryName = names[randomNumber];
-      // countryNames.splice(randomNumber, 1);
+        .then(res => res.map(c => c.code))
+        .then(codes => document.querySelector(".content").innerText = codes);
     }
   </script>
 </body>
