@@ -16,22 +16,11 @@
     </div>
   </div>
   <script>
-    function getRandomNumber(min, max) {
-      return Math.floor(Math.random() * max) + min;
-    }
     function loadData() {
-
-      let countryNameArray = [];
-
       fetch('ajax_sample.json')
         .then(res => res.json())
-        .then(res => res.map(c => c.name))
-        .then(array => {
-          for (i = 0; i < 15; i++) {
-            countryNameArray = array.map(item => item)
-          }
-          document.querySelector(".content").innerText = countryNameArray;
-        })
+        .then(res => res.map(c => c.code))
+        .then(codes => document.querySelector(".content").innerText = codes);
     }
   </script>
 </body>
