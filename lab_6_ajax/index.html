@@ -28,7 +28,7 @@
           for (i = 0; i < 15; i++) {
             let arrayIndex = getRandomNumber(0, countryNames.length - 1);
             countryList += '<li>' + countryNames[arrayIndex] + '</li>';
-            countryNames.splice(getRandomNumber(0,countryNames.length - 1), 1);
+            countryNames.splice(getRandomNumber(0, countryNames.length - 1), 1);
           }
           countryList += '</ol>';
           document.querySelector(".content").innerHTML = countryList;
