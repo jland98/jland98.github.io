@@ -16,11 +16,23 @@
     </div>
   </div>
   <script>
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * max) + min;
+    }
     function loadData() {
       fetch('ajax_sample.json')
         .then(res => res.json())
-        .then(res => res.map(c => c.code))
-        .then(codes => document.querySelector(".content").innerText = codes);
+        .then(countryNames => countryNames.map(c => c.name))
+        .then(countryNames => {
+          countryList = "<ol>";
+          for (i = 0; i < 15; i++) {
+            let arrayIndex = getRandomNumber(0, countryNames.length - 1);
+            countryList += '<li>' + countryNames[arrayIndex] + '</li>';
+            countryNames.splice(getRandomNumber(0,countryNames.length - 1), 1);
+          }
+          countryList += '</ol>';
+          document.querySelector(".content").innerHTML = countryList;
+        });
     }
   </script>
 </body>
