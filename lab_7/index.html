@@ -23,7 +23,12 @@
           console.log(routes);
           return routes;
         })
-        // .then(data => document.querySelector(".content").innerText = data);
+        .then(routes => {
+          const listItems = routes.map(route => {
+            const routeId = route.routeId;
+          });
+        })
+        .then(data => document.querySelector(".content").innerText = data);
     }
   </script>
 </body>
