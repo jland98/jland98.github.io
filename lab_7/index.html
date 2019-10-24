@@ -17,9 +17,13 @@
   </div>
   <script>
     function loadData() {
-      fetch('ajax_sample.json')
+      fetch('https://api.umd.io/v0/bus/routes')
         .then(res => res.json())
-        .then(data => document.querySelector(".content").innerText = data);
+        .then(routes => {
+          console.log(routes);
+          return routes;
+        })
+        // .then(data => document.querySelector(".content").innerText = data);
     }
   </script>
 </body>
