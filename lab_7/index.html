@@ -25,10 +25,24 @@
         })
         .then(routes => {
           const listItems = routes.map(route => {
-            const routeId = route.routeId;
+            const routeId = route.route_id;
+            const routeTitle = route.title.replace(routeId, '');
+            const busRouteItems = '<li>' + routeId + ":" + routeTitle + '</li>' + '\n';
+            return busRouteItems;
           });
+
+          let allListItems = '';
+          for (i = 0; i < listItems.length; i++) {
+            allListItems += listItems[i];
+          }
+          const updatedListItems = '<ul>' + '\n' + allListItems + '\n' + '</ul>';
+          document.querySelector(".content").innerHTML = updatedListItems;
+          return routes;
         })
-        .then(data => document.querySelector(".content").innerText = data);
+        .then(routes => {
+          console.log(routes);
+          return routes;
+        })
     }
   </script>
 </body>
