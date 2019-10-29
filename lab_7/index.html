@@ -43,6 +43,12 @@
           console.log(routes);
           return routes;
         })
+        .then(routes => {
+          function isHome(route) {
+            return route.route_id === '127';
+          }
+          document.querySelector('.header').innerHTML = "UMD Bus Route " +  routes.find(isHome).title;
+        })
     }
   </script>
 </body>
