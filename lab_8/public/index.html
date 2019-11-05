@@ -24,8 +24,12 @@
           console.log(res); // logging step to check what we got
           return res;
         })
-        .then(res => res.data.map(c => c.route_id))
-        .then(codes => document.querySelector(".content").innerText = codes);
+        .then(res => res.data.map(c => c.course_id))
+        .then(courses => {
+          const infoSci = courses.filter(course_id => course_id.includes('INST'));
+          document.querySelector(".content").innerText = infoSci;
+        }
+        )
     }
   </script>
 </body>
