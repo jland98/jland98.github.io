@@ -20,14 +20,20 @@
       console.log('fetch'); // confirm code is running on click
       fetch('/api')
         .then(res => res.json())
-        .then(res => {
-          console.log(res); // logging step to check what we got
-          return res;
-        })
-        .then(res => res.data.map(c => c.course_id))
         .then(courses => {
+          console.log(courses); // logging step to check what we got
+          return courses;
+        })
+        .then(courses => courses.data.map(c => c.course_id))
+        .then(courses => {
+          let oldCourseList = '<ol>';
           const infoSci = courses.filter(course_id => course_id.includes('INST'));
-          document.querySelector(".content").innerText = infoSci;
+          console.log((infoSci))
+          for (i = 0; i < infoSci.length; i++) {
+            oldCourseList += "<li>" + infoSci[i] + "</li>";
+          }
+          oldCourseList += '</ol>';
+          document.querySelector(".content").innerHTML = oldCourseList;
         }
         )
     }
