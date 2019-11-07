@@ -49,6 +49,7 @@ app.get('/api', (req, res) => {
       console.log(data);
       res.send({ data: data });
     })
+    .then(courses => courses.data.map(c => c.course_id))
     .catch((err) => {
       console.log(err);
       res.redirect('/error');
